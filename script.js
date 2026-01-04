@@ -1,7 +1,7 @@
 // Binary background animation
 const binary = document.getElementById("binary");
 
-setInterval1( () => {
+setInterval(() => {
   let line = "";
   for (let i = 0; i < 120; i++) {
     line += Math.random() > 0.5 ? "1" : "0";
@@ -17,7 +17,7 @@ const fill = document.getElementById("fill");
 const percent = document.getElementById("percent");
 const face = document.getElementById("face");
 const status = document.getElementById("status");
-const screen = document.getElementById("screen");
+const screen = document.querySelector(".screen");
 
 const loading = setInterval(() => {
   progress += Math.random() * 3;
@@ -26,7 +26,7 @@ const loading = setInterval(() => {
   percent.textContent = Math.floor(progress) + "%";
 
   if (progress >= 70) {
-    document.body.style.color = "ff3333";
+    document.body.style.color = "#ff3333";
     screen.classList.add("glitch");
     status.textContent = "SYSTEM CORRUPTING";
   }
@@ -36,6 +36,6 @@ const loading = setInterval(() => {
     fill.style.width = "100%";
     percent.textContent = "SYSTEM COMPROMISED";
     status.textContent = "BADWARE DEPLOYED";
-    face.textContent = "C:";
+    face.textContent = "C>:";
   }
-}, 120;
+}, 120);
