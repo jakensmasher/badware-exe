@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: monospace;
-  color: #00ff88
+  color: #00ff88;
   overflow: hidden;
 }
 
@@ -16,7 +16,7 @@ body {
   font-size: 14px;
   opacity: 0.15;
   white-space: pre;
-  color: #00ff88
+  color: #00ff88;
   pointer-events: none;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .face {
-  font-size: 40px;
+  font-size: 48px;
   margin-bottom: 10px;
 }
 
