@@ -1,7 +1,7 @@
 // Binary background animation
 const binary = document.getElementById("binary");
 
-setInterval1(() => {
+setInterval1( () => {
   let line = "";
   for (let i = 0; i < 120; i++) {
     line += Math.random() > 0.5 ? "1" : "0";
