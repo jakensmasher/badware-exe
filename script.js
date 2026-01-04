@@ -1,18 +1,35 @@
-// Binary background animation
+// --- Binary background animation ---
+
 const binary = document.getElementById("binary");
 
-setInterval(() => {
-  let line = "";
-  for (let i = 0; i < 120; i++) {
-    line += Math.random() > 0.5 ? "1" : "0";
+// Function to generate full-screen binary
+function generateBinary() {
+  const charWidth = 8;   // approx width of one character
+  const charHeight = 16; // approx height of one line
+
+  const columns = Math.ceil(window.innerWidth / charWidth);
+  const rows = Math.ceil(window.innerHeight / charHeight);
+
+  let output = "";
+
+  for (let r = 0; r < rows; r++) {
+    let line = "";
+    for (let c = 0; c < columns; c++) {
+      line += Math.random() > 0.5 ? "1" : "0";
+    }
+    output += line + "\n";
   }
-  binary.textContent += line + "\n";
-  binary.textContent = binary.textContent.slice(-8000);
-}, 50);
 
-// Progress bar logic
+  binary.textContent = output;
+}
+
+// Run binary animation repeatedly
+setInterval(generateBinary, 80);
+window.addEventListener("resize", generateBinary);
+
+// --- Progress bar logic ---
+
 let progress = 0;
-
 const fill = document.getElementById("fill");
 const percent = document.getElementById("percent");
 const face = document.getElementById("face");
